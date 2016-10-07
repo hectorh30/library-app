@@ -16,7 +16,7 @@ export default Ember.Route.extend({
     return this.store.query('library', {
       orderBy: 'name',
       startAt: params.letter,
-      endAt: params.letter+"\uf8ff"
+      endAt: params.letter + "\uf8ff"
     });
   },
 
