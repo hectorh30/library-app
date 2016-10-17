@@ -8,7 +8,6 @@ export default Ember.Route.extend({
   },
 
   model(params) {
-
     if (params.limit === 'all') {
       return this.store.findAll('library');
     }
@@ -21,7 +20,6 @@ export default Ember.Route.extend({
   },
 
   actions: {
-
     deleteLibrary(library) {
       let confirmation = confirm('Are you sure?');
 
@@ -30,5 +28,4 @@ export default Ember.Route.extend({
       }
     }
   }
-
 });

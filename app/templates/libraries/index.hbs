@@ -9,6 +9,7 @@
       All
     {{/link-to}}
   </div>
+
   <div class="col-md-1">
     {{#link-to
       (query-params limit='abc')
@@ -45,7 +46,12 @@
         }}
           Edit
         {{/link-to}}
-        <button class="btn btn-danger btn-xs" {{action 'deleteLibrary' library}}>Delete</button>
+        <button
+          class="btn btn-danger btn-xs"
+          {{action 'deleteLibrary' library}}
+        >
+          Delete
+        </button>
       {{/library-item}}
     </div>
   {{else}}

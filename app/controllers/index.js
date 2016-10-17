@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  headerMessage: 'Coming Soon',
+  headerMessage: 'Hola mundo',
   responseMessage: '',
   emailAddress: '',
 
@@ -15,7 +15,8 @@ export default Ember.Controller.extend({
       const email = this.get('emailAddress');
 
       const newInvitation = this.store.createRecord('invitation', {
-        email: email
+        email: email,
+        dateSent: new Date()
       });
 
       newInvitation.save().then((response) => {
@@ -25,8 +26,6 @@ export default Ember.Controller.extend({
         );
         this.set('emailAddress', '');
       });
-
     }
   }
-
 });

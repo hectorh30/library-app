@@ -3,14 +3,16 @@ import Ember from 'ember';
 import Faker from 'faker';
 
 export default DS.Model.extend({
-
   name: DS.attr('string'),
   address: DS.attr('string'),
   phone: DS.attr('string'),
 
   books: DS.hasMany('book', {inverse: 'library', async: true}),
 
-  isValid: Ember.computed.notEmpty('name'),
+  isValid: Ember.computed('name', 'address', function() {
+    return !Ember.isEmpty(this.get('name'))
+      && !Ember.isEmpty(this.get('address'));
+  }),
 
   randomize() {
     this.set('name', Faker.company.companyName() + ' Library');

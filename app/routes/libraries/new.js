@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-
   model() {
     return this.store.createRecord('library');
   },
@@ -9,7 +8,7 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     this._super(controller, model);
 
-    controller.set('title', 'Create a new library');
+    controller.set('title', 'Dude, create una libreria no?');
     controller.set('buttonLabel', 'Create');
   },
 

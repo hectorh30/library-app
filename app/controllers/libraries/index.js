@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-
   queryParams: ['filter', 'limit', 'letter'],
   filter: '',
   letter: '',
@@ -26,5 +25,4 @@ export default Ember.Controller.extend({
 
     return results.sortBy('name');
   })
-
 });
